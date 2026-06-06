@@ -15,14 +15,12 @@ export async function addBookmark(formData: FormData) {
   let title = (formData.get("title") as string)?.trim();
   let faviconUrl: string | null = null;
 
-  if (!title) {
-    try {
-      const og = await fetchOGData(url);
-      title = og.title;
-      faviconUrl = og.favicon;
-    } catch {
-      title = url;
-    }
+  try {
+    const og = await fetchOGData(url);
+    if (!title) title = og.title;
+    faviconUrl = og.favicon;
+  } catch {
+    if (!title) title = url;
   }
 
   const { error } = await supabase.from("bookmarks").insert({

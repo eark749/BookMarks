@@ -8,13 +8,14 @@ export default async function DashboardPage({
   searchParams: Promise<{ q?: string; filter?: string; page?: string }>;
 }) {
   const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-  if (!user) redirect("/login");
+  const { data: { session } } = await supabase.auth.getSession();
+  if (!session) redirect("/login");
+  const userId = session.user.id;
 
   const { data: profile } = await supabase
     .from("profiles")
     .select("handle")
-    .eq("id", user.id)
+    .eq("id", userId)
     .single();
 
   const params = await searchParams;
@@ -26,7 +27,7 @@ export default async function DashboardPage({
   let query = supabase
     .from("bookmarks")
     .select("*", { count: "exact" })
-    .eq("user_id", user.id)
+    .eq("user_id", userId)
     .order("created_at", { ascending: false })
     .range((page - 1) * perPage, page * perPage - 1);
 
