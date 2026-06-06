@@ -1,6 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
-import { signout } from "@/lib/actions/auth";
 import DashboardClient from "./DashboardClient";
 
 export default async function DashboardPage({
@@ -20,7 +19,7 @@ export default async function DashboardPage({
 
   const params = await searchParams;
   const q = params.q ?? "";
-  const filter = params.filter ?? "all"; // all | public | private
+  const filter = params.filter ?? "all";
   const page = Math.max(1, parseInt(params.page ?? "1", 10));
   const perPage = 5;
 
@@ -39,29 +38,13 @@ export default async function DashboardPage({
   const totalPages = Math.ceil((count ?? 0) / perPage);
 
   return (
-    <div style={{ maxWidth: 700, margin: "0 auto", padding: "24px 16px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
-        <div>
-          <h1 style={{ margin: 0 }}>My Bookmarks</h1>
-          {profile?.handle && (
-            <a href={`/${profile.handle}`} style={{ fontSize: 13, color: "#666" }}>
-              /{profile.handle} (public profile)
-            </a>
-          )}
-        </div>
-        <form action={signout}>
-          <button type="submit" style={{ padding: "6px 12px", cursor: "pointer" }}>
-            Sign out
-          </button>
-        </form>
-      </div>
-      <DashboardClient
-        bookmarks={bookmarks ?? []}
-        totalPages={totalPages}
-        currentPage={page}
-        currentQ={q}
-        currentFilter={filter}
-      />
-    </div>
+    <DashboardClient
+      handle={profile?.handle ?? ""}
+      bookmarks={bookmarks ?? []}
+      totalPages={totalPages}
+      currentPage={page}
+      currentQ={q}
+      currentFilter={filter}
+    />
   );
 }

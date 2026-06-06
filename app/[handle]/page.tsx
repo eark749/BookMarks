@@ -47,7 +47,7 @@ export default async function PublicProfilePage({
                     {bm.title}
                   </a>
                   <div style={{ fontSize: 12, color: "#888", marginTop: 2 }}>
-                    {new URL(bm.url).hostname} · {new Date(bm.created_at).toLocaleDateString()}
+                    {new URL(bm.url).hostname} · {new Date(bm.created_at).toLocaleDateString("en-US")}
                   </div>
                 </div>
               </div>
