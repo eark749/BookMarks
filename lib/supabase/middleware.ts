@@ -25,24 +25,28 @@ export async function updateSession(request: NextRequest) {
     }
   );
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  // getSession reads cookie directly — no network call, always reliable for redirects
+  const { data: { session } } = await supabase.auth.getSession();
 
-  const protectedPaths = ["/dashboard"];
-  const authPaths = ["/login", "/signup"];
   const path = request.nextUrl.pathname;
+  const protectedPaths = ["/dashboard"];
+  const guestOnlyPaths = ["/", "/login", "/signup"];
 
-  if (!user && protectedPaths.some((p) => path.startsWith(p))) {
+  if (!session && protectedPaths.some((p) => path.startsWith(p))) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
     return NextResponse.redirect(url);
   }
 
-  if (user && authPaths.some((p) => path.startsWith(p))) {
+  if (session && guestOnlyPaths.includes(path)) {
     const url = request.nextUrl.clone();
     url.pathname = "/dashboard";
-    return NextResponse.redirect(url);
+    // Carry refreshed cookies into the redirect response
+    const redirectResponse = NextResponse.redirect(url);
+    supabaseResponse.cookies.getAll().forEach(({ name, value }) => {
+      redirectResponse.cookies.set(name, value);
+    });
+    return redirectResponse;
   }
 
   return supabaseResponse;
