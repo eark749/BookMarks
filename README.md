@@ -2,6 +2,8 @@
 
 A personal bookmark manager — save, organize, and share your favorite links. Built with Next.js 15, Supabase, and Resend.
 
+> [Watch demo video](https://pub-791252e542b34b9b85d72f368c5c362f.r2.dev/bookmarks.mp4)
+
 ## Running Locally
 
 1. Clone the repo and install dependencies:
