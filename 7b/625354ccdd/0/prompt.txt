@@ -1,0 +1,77 @@
+## Error Type
+Recoverable Error
+
+## Error Message
+Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/dashboard" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+            <SegmentViewNode type="page" pagePath="(dashboard...">
+              <SegmentTrieNode>
+              <DashboardPage>
+                <div style={{maxWidth:700, ...}}>
+                  <div>
+                  <DashboardClient bookmarks={[...]} totalPages={1} currentPage={1} currentQ="" currentFilter="all">
+                    <div>
+                      <form>
+                      <div>
+                      <ul style={{...}}>
+                        <li style={{border:"1p...", ...}}>
+                          <div style={{display:"flex", ...}}>
+                            <div style={{flex:1,minWidth:0}}>
+                              <a>
+                              <div style={{fontSize:12, ...}}>
++                               06/06/2026
+-                               6/6/2026
+                            ...
+            ...
+          ...
+
+
+
+    at div (<anonymous>:null:null)
+    at <unknown> (app/(dashboard)/dashboard/DashboardClient.tsx:168:21)
+    at Array.map (<anonymous>:null:null)
+    at DashboardClient (app/(dashboard)/dashboard/DashboardClient.tsx:141:22)
+    at DashboardPage (app/(dashboard)/dashboard/page.tsx:58:7)
+
+## Code Frame
+  166 |                       {bm.title}
+  167 |                     </a>
+> 168 |                     <div style={{ fontSize: 12, color: "#888", marginTop: 2 }}>
+      |                     ^
+  169 |                       {new URL(bm.url).hostname} · {bm.is_public ? "public" : "private"} ...
+  170 |                     </div>
+  171 |                   </div>
+
+Next.js version: 16.2.7 (Turbopack)
+ [Image #4] see there is this hydration error server rendered format is not matching client
+
+---
+
+see now i belive all the check points are covered right. now i want to revamo the ui so a nice one apge one section landing page when user is the at the home page which is / then when user logs in and signs in and also the dashbaord also and the publiuc handle page also. give me ideas how we can revamp the ui
+
+---
+
+[Image #5] see i want the dashboard to look like this very minimal public and private on the sidbar plus option where i can add the book mark and also for edit a new small pop in the middle of screen where backeground gets blurred/ are u getting? dont code discuss for now
+
+---
+
+vertical list only and uniform grid and also this is for dashbaord right now then we will change for other pages too
+
+---
+
+change the colour to white and black. i mentioned it before right dont make mistakes like this exact colours which where there in image
