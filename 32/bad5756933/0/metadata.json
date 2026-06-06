@@ -1,0 +1,87 @@
+{
+  "cli_version": "0.7.5",
+  "checkpoint_id": "32bad5756933",
+  "session_id": "92e982bc-2be7-4027-abd9-3ca296c57570",
+  "strategy": "manual-commit",
+  "created_at": "2026-06-06T06:23:49.308533Z",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    "app/favicon.ico",
+    "app/icon.tsx"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-sonnet-4-6",
+  "turn_id": "7c5a5a989d92",
+  "checkpoint_transcript_start": 605,
+  "transcript_lines_at_start": 605,
+  "token_usage": {
+    "input_tokens": 11,
+    "cache_creation_tokens": 1253,
+    "cache_read_tokens": 573007,
+    "output_tokens": 957,
+    "api_call_count": 5
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "prompt-skill-claude-code-caveman:caveman-2026-06-06T03:31:45.268332Z",
+      "event_type": "prompt_invocation",
+      "skill": {
+        "name": "caveman:caveman"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "prompt_slash_command",
+        "confidence": "explicit"
+      },
+      "turn_id": "19613381b471",
+      "timestamp": "2026-06-06T03:31:45.268332Z",
+      "native": {
+        "command": "/caveman:caveman"
+      },
+      "collapse": {
+        "target": "user_message",
+        "label": "/caveman:caveman",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 25
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-06-06T06:23:49.264842Z",
+    "agent_lines": 29,
+    "agent_removed": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 29,
+    "total_lines_changed": 29,
+    "agent_percentage": 100,
+    "metric_version": 2
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 9,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 9
+      }
+    },
+    {
+      "checkpoint_number": 2,
+      "user_lines_added": 9,
+      "user_lines_removed": 0,
+      "agent_lines_added": 29,
+      "agent_lines_removed": 0,
+      "user_added_per_file": {
+        ".claude/settings.local.json": 9
+      }
+    }
+  ]
+}
