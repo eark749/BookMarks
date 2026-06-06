@@ -1,0 +1,9 @@
+see there is one error if i m user okay i m logged in from first then when i click on the visit my public profile it takes me to the public from there i reditrect to main landing page and when i login it again asks me for the details fix that verifying error
+
+---
+
+see in @lib/supabase/middleware.ts it only redirects to logged-in users to /login and /signup but /root is not in the authPaths array so a logged in user who lands on / sees the landing page and clicks on log in which triggers to fresh navigation where session may or may not refresh clealy add / to the redirect logic
+
+---
+
+no its still not working when i login and go to the landing page and go to the login it doesnt auto redirect me to the dashboard
