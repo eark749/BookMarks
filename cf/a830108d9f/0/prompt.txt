@@ -1,0 +1,9 @@
+[Image #7] see login and sign up page should look like this just dont add the google and other providers thing but the componenet should look like this
+
+---
+
+see the animation of the dotted grip should be there only on the landing page not for the login or sign in
+
+---
+
+make the public page more interactive and the link of create you own bookmarks profile should go to the landing page not the login page
