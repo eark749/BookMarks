@@ -51,6 +51,7 @@ next.js 16 changed the file convention for middleware. in v15 the file was middl
 #### Fix:- gave it the exact bash command + file name + exact function name.
 #### Prompt:- 
 "mv middleware.ts proxy.ts — Then open proxy.ts and change one word — the function name: export async function proxy(request: NextRequest)"
+
 ---
 
 ## Improvements
