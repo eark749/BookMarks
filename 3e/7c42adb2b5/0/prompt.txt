@@ -1,0 +1,43 @@
+/caveman:caveman
+
+---
+
+git branch
+
+---
+
+/caveman:caveman
+
+---
+
+see i want you to create a small personal booksmarks web-app think like linktree and pocket is integrated, i will describe the idea in 5 points
+1. people can sign up and login with email + password. new sign ups will recieve a welcome/confiramtion mail
+2. a signed-in user can add,edit and delete their own bookmarks. each bookmark will have a title, a url and a pub/pvt flag
+3. We will have RBAC a users bookmarks can only be seen by him this is a real requirement of the idea, assume people will poke at your urls and api direclty
+4. each user will have public profile with its unique handle anyone without loging in can visit the <handle> and see that users public bookmarks only. and handle will be unique two people cant have same handle so in db the type will be TEXT UNIQUE.
+5. once logged in a user should have a simple dashboard of their bookmarks. logged out vistors shouldnt be able to reach it. 
+for db we will use supabase for auth also same only, for sending email we will use resend. we will use next.js and it will be a monorepo so the components also can be usable okay. dont code right now first explain me what u understood so i can verify our both vision matches. dont assuem anything ask any questions where u get confused.
+
+---
+
+1. handle setup should be during sign-up flow only
+2. no skip the verification just send a welcome email via Resend
+3. right now forget about shared components jsut focus on building then later we will discuss about shared componenets
+4. auto-fetch og title/favicon when user pastes url
+5. seach is needed, filter by pub/pvt and should be sorted by dates added and pagination is needed when the user has more than 5 books go to a new page then
+6. shad cn ui. i will give u the code for that. clear now?? tell me what u need?
+
+---
+
+supabase secrets i will put in the .env let me know where same for resend api key also i will put in start witht he project first create everything then i will provide u the shadcn ui code and all we will work on ui later first we will see if the flow is working correctly or not. just create a minimal ui where i can test it and for next js version use whateveru think is best for this usecase
+
+---
+
+Create account
+Handle (@username)
+vansh
+Email
+vanshsoniofficial@gmail.com
+Password
+••••••••••
+Failed to create profile. Handle may already be taken.?? how come handle is already taken? i have no users right check the logs and see whats the error and tell me and rectify it too

@@ -1,0 +1,61 @@
+{
+  "cli_version": "0.7.5",
+  "checkpoint_id": "3e7c42adb2b5",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 2,
+  "files_touched": [
+    ".gitignore",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "README.md",
+    "app/(auth)/login/LoginForm.tsx",
+    "app/(auth)/login/page.tsx",
+    "app/(auth)/signup/SignupForm.tsx",
+    "app/(auth)/signup/page.tsx",
+    "app/(dashboard)/dashboard/DashboardClient.tsx",
+    "app/(dashboard)/dashboard/page.tsx",
+    "app/[handle]/page.tsx",
+    "app/api/og/route.ts",
+    "app/favicon.ico",
+    "app/globals.css",
+    "app/layout.tsx",
+    "app/page.tsx",
+    "eslint.config.mjs",
+    "lib/actions/auth.ts",
+    "lib/actions/bookmarks.ts",
+    "lib/og.ts",
+    "lib/resend.ts",
+    "lib/supabase/admin.ts",
+    "lib/supabase/client.ts",
+    "lib/supabase/middleware.ts",
+    "lib/supabase/server.ts",
+    "middleware.ts",
+    "next.config.ts",
+    "package-lock.json",
+    "package.json",
+    "postcss.config.mjs",
+    "public/file.svg",
+    "public/globe.svg",
+    "public/next.svg",
+    "public/vercel.svg",
+    "public/window.svg",
+    "supabase-schema.sql",
+    "tsconfig.json"
+  ],
+  "sessions": [
+    {
+      "metadata": "/3e/7c42adb2b5/0/metadata.json",
+      "transcript": "/3e/7c42adb2b5/0/full.jsonl",
+      "content_hash": "/3e/7c42adb2b5/0/content_hash.txt",
+      "prompt": "/3e/7c42adb2b5/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 67,
+    "cache_creation_tokens": 62299,
+    "cache_read_tokens": 1780510,
+    "output_tokens": 20052,
+    "api_call_count": 49
+  }
+}
