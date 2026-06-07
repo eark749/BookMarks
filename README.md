@@ -36,7 +36,7 @@ npm run dev
 
 ## AGENT GOT IT WRONG
 
-### Problem 3:- Agent starts coding right away.
+### Problem 1:- Agent starts coding right away.
 Agent directly starts coding right away sometimes without a proper ideation, propre instruction no guidelines which can cost us if code is wrong, security bug and of course context window getting flodded because of wrong steps taken by agent.
 #### Fix:- so at the very start i enforced an alignment step before any code is written. 
 #### Prompt:- dont code right now first explain me what u understood so i can verify our both vision matches.
